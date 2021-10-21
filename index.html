@@ -1,13 +1,216 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
+
+    <title>Blog Peche</title>
+
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Documblog de Peche</title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+    <!-- CSS perso -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- SEMANTIC.UI -->
+    <link rel="stylesheet" type="text/css" href="Semantic-UI/dist/semantic.css">
+
+
+    <!-- JS -->
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
 </head>
+
 <body>
+
+    <div class="ui sidebar left inverted vertical menu">
+
+        <div class="item">
+            <a class="ui icon image" href="./index.php">
+                <img src="https://place-hold.it/40x40" alt="">
+            </a>
+            <a href="index.html">Accueil</a>
+        </div>
     
+        <a class="item"  onClick="showModal1()">
+        <b>Connexion</b>
+        </a>
+    
+        <a class="item">
+        <b>Inscription</b>
+        </a>
+
+        <a class="item" href="articles.html">
+            <b>Articles</b>
+            </a>
+        
+        <a class="item" href="contact.html">
+            <b>Contact</b>
+        </a>
+
+        <a class="item">
+            <b>Parametres</b>
+            </a>
+        
+        <a class="item">
+            <b>Creer un article</b>
+        </a>
+        
+    </div>
+
+
+<div class="ui pusher">
+
+    <!-- NAVBAR START-->
+    <header>
+        <div class="ui grid">
+            <div class="ui inverted fixed menu navbar page grid">
+                <a href="index.php" class="active item">
+                    <img src="https://place-hold.it/50x50" alt="">
+                </a>
+                <a id="toggle" class="item">
+                    Menu
+                </a>
+
+                <div class="right menu">
+                    <a class="item">
+                        connexion
+                    </a>
+                    <a class="item"> 
+                        inscription
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- NAVBAR END-->
+
+    <!-- CONTENT START -->
+    <section>
+        <div class="container">
+            <img src="assets/img/Mountain.jpg" height="400px" width="100%" alt="">
+        </div>
+    </section>
+
+    <section>
+        <div class="ui vertical stripe segment">
+            <div class="ui middle aligned stackable grid container">
+                <div class="row">
+                    <div class="six wide right floated column">
+                        <img src="assets/img/Mountain.jpg" class="ui large bordered rounded image">
+                    </div>
+                    <div class="ten wide column">
+                    <h3 class="ui header">We Make Bananas That Can Dance</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex praesentium nostrum perferendis mollitia rem quaerat harum similique dolor possimus? Recusandae maiores voluptates officia dolore consectetur dicta eos quia repellat eligendi eaque esse facere, voluptas magni aliquid. Harum consequatur velit facere? Quam esse impedit debitis placeat incidunt, laudantium facilis sapiente veritatis!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="ui vertical stripe segment">
+            <div class="ui middle aligned stackable inverted grid container">
+                <div class="row">
+                    <div class="ten wide column">
+                    <h3 class="ui header">We Make Bananas That Can Dance</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex praesentium nostrum perferendis mollitia rem quaerat harum similique dolor possimus? Recusandae maiores voluptates officia dolore consectetur dicta eos quia repellat eligendi eaque esse facere, voluptas magni aliquid. Harum consequatur velit facere? Quam esse impedit debitis placeat incidunt, laudantium facilis sapiente veritatis!</p>
+                    </div>
+
+                    <div class="six wide right floated column">
+                        <img src="assets/img/Mountain.jpg" class="ui large bordered rounded image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="ui vertical secondary inverted stripe quote segment">
+            <div class="ui equal width stackable internally celled grid">
+              <div class="center aligned row">
+                <div class="column">
+                  <h3>"What a Company"</h3>
+                  <p>That is what they all say about us</p>
+                </div>
+                <div class="column">
+                    <a class="ui positive button" style="margin-top: 10px">creer un article</a>          
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="ui inverted vertical footer segment">
+            <div class="ui container">
+              <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="three wide column">
+                  <div class="ui inverted link list">
+                    <h4 class="ui inverted header">Services</h4>
+                    <a href="#" class="item">Conditions d'utilisation</a>
+                  </div>
+                </div>
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Services</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Confidentialité</a>
+                  </div>
+                </div>
+                <div class="five wide column">
+                  <h4 class="ui inverted header">Footer Header</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Reglement</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </footer>
+
+</div>
+
+<div class="ui container">
+    <div id="bug" class="ui basic modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Reporter un bug
+        </div>
+        <div class="content">
+           <form class="ui form">
+                <div class="field">
+                    <div class="ui left icon input">
+                    <i class="user icon"></i>
+                    <input type="text" name="name" placeholder="Nom">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                    <i class="mail icon"></i>
+                    <textarea name="message" placeholder="Quel bug rencontrez-vous?"></textarea>
+                    </div>
+                </div>
+                <div class="ui fluid large green submit button">Envoyer</div>  
+                <div class="ui error message"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- SCRIPTS -->
+<script>
+    $('#toggle').click(function(){
+        $('.ui.sidebar').sidebar('toggle');
+    });
+
+    function showModal1() {
+        $('#bug').modal('show');
+    };
+</script>
+
 </body>
 </html>
+

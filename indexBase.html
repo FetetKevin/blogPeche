@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEMANTIC.UI -->
+    <link rel="stylesheet" type="text/css" href="Semantic-UI/dist/semantic.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>blog de Peche</title>
+</head>
+<body>
+
+    <div class="ui pusher">
+
+        <header>
+            <ul class="nav-left">
+                <li><img src="https://place-hold.it/50x50" alt=""></li>
+                <li><a id="toggle" class="item button">Menu</a></li>
+            </ul>
+            <ul class="nav-right">
+                <div class="ui icon input">
+                    <i class="search icon"></i>
+                    <input type="text" placeholder="Search...">
+                  </div>
+                <li><a class="button" href="">log in</a></li>
+                <li><a class="button" href="">inscription</a></li>
+            </ul>
+        </header>
+    
+        <section>
+            <div>
+                <img src="https://place-hold.it/30x30" alt="">
+                <p>menu</p>
+                <ul>
+                    <li><a class="button" href="">connexion</a></li>
+                    <li><a class="button" href="">inscription</a></li>
+                </ul>
+                <ul>
+                    <li><a class="button" href="">articles</a></li>
+                    <li><a class="button" href="">contact</a></li>
+                    <li><a class="button" href="">parametres</a></li>
+                </ul>
+                <ul>
+                    <li><a class="button" href="">creer article</a></li>
+                </ul>
+            </div>
+    
+            <div class="ui sidebar left inverted vertical menu">
+    
+                <div class="item">
+                    <a class="ui logo icon image" href="./index.php">
+                    <img src="img/logo.png">
+                    </a>
+            
+                    <a href="./index.php"><b>Accueil</b></a>
+                </div>
+
+            </div>
+        </section>
+    
+    
+        <section>
+            <div>
+                <img src="https://place-hold.it/1320x300" alt="">
+            </div>
+        </section>
+    
+        <section>
+            <div>
+                <img src="https://place-hold.it/200x200" alt="">
+                <h1>Titre</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, omnis.</p>
+            </div>
+        </section>
+    
+        <section>
+            <div>
+                <h1>Titre</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, omnis.</p>
+                <img src="https://place-hold.it/200x200" alt="">
+            </div>
+        </section>
+    
+        <section>
+            <div style="border: 1px solid black">
+                <h1>Titre</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, omnis.</p>
+                <a href="">creer un article</a>
+            </div>
+        </section>
+    
+        <footer>
+            <ul>
+                <li><a class="button" href="">conditions</a></li>
+                <li><a class="button" href="">confidentialité</a></li>
+                <li><a class="button"href="">reglement</a></li>
+            </ul>
+        </footer>
+
+    </div>
+
+<script>
+    $('#toggle').click(function(){
+        $('.ui.sidebar').sidebar('toggle');
+    });
+</script>
+
+</body>
+</html>
