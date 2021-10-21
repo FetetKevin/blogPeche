@@ -1,25 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="include.js"></script>
-    <title>blog de Peche</title>
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- CSS perso -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- SEMANTIC.UI -->
+    <link rel="stylesheet" type="text/css" href="Semantic-UI/dist/semantic.css">
+    <!-- JS -->
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+    <title>Blog Peche</title>
 </head>
 <body>
-
-    <div w3-include-html="header.html"></div>
-
-
     
+    <div class="ui sidebar left inverted vertical menu">
 
-    <div w3-include-html="footer.html"></div>
+        <div class="item">
+            <a class="ui icon image" href="./index.php">
+                <img src="https://place-hold.it/40x40" alt="">
+            </a>
+            <a href="index.html">Accueil</a>
+        </div>
+    
+        <a class="item" onClick="showModal()">
+        <b>Connexion</b>
+        </a>
+    
+        <a class="item">
+        <b>Inscription</b>
+        </a>
+
+        <a class="item" href="articles.html">
+            <b>Articles</b>
+            </a>
+        
+        <a class="item" href="contact.html">
+            <b>Contact</b>
+        </a>
+
+        <a class="item">
+            <b>Parametres</b>
+            </a>
+        
+        <a class="item">
+            <b>Creer un article</b>
+        </a>
+        
+    </div>
 
 
-    <script>
-        includeHTML();
-    </script>
+<div class="ui pusher">
+
+    <!-- NAVBAR START-->
+    <header>
+        <div class="ui grid">
+            <div class="ui inverted fixed menu navbar page grid">
+                <a href="index.php" class="active item">
+                    <img src="https://place-hold.it/50x50" alt="">
+                </a>
+                <a id="toggle" class="item">
+                    Menu
+                </a>
+
+                <div class="right menu">
+                    <a class="item" onClick="showModal()">
+                        connexion
+                    </a>
+                    <a class="item"> 
+                        inscription
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- NAVBAR END-->
+
+
+
+<!-- MODAL LOG IN START -->
+<div class="ui container">
+
+    <div id="setting" class="ui basic modal">
+
+        <i class="close icon"></i>
+        <div class="header">
+            Connectez-vous
+        </div>
+
+        <div class="content">
+            <form class="ui form">
+                <h4 class="ui dividing header">Shipping Information</h4>
+                <div class="field">
+                    <label>Name</label>
+                    <div class="two fields">
+                        <div class="field">
+                            <input type="text" name="fname" placeholder="Entrez votre e-mail">
+                        </div>
+                        <div class="field">
+                            <input type="text" name="lname" placeholder="Entrez votre mot de passe">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>    
+
+        <div class="actions">
+            <div class="ui positive button">Valider</div>
+        </div>
+
+    </div>
+
+</div>
+<!-- MODAL LOG IN END -->
+
+
+<!-- SCRIPTS -->
+<script>
+    $('#toggle').click(function(){
+        $('.ui.sidebar').sidebar('toggle');
+    });
+
+    function showModal() {
+        $('#setting').modal('show');
+    }
+</script>
+
 </body>
 </html>

@@ -2,24 +2,17 @@
 <html lang="fr">
 
 <head>
-
-    <title>Blog Peche</title>
-
     <meta charset="UTF-8">
-
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
     <!-- CSS perso -->
     <link rel="stylesheet" type="text/css" href="style.css">
-
     <!-- SEMANTIC.UI -->
     <link rel="stylesheet" type="text/css" href="Semantic-UI/dist/semantic.css">
-
-
     <!-- JS -->
     <script src="https:cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+    <title>Blog Peche</title>
 </head>
 
 <body>
@@ -27,36 +20,41 @@
     <div class="ui sidebar left inverted vertical menu">
 
         <div class="item">
-            <a class="ui icon image" href="./index.php">
-                <img src="https://place-hold.it/40x40" alt="">
+            <a class="ui icon image" href="index.html">
+                <img src="assets/img/logo.png" height="40px" width="40px" alt="">
             </a>
             <a href="index.html">Accueil</a>
         </div>
     
-        <a class="item"  onClick="showModal1()">
-        <b>Connexion</b>
-        </a>
+        <div class="item">
+            <a class="item" onClick="showModalLogin()">
+                <b>Connexion</b>
+            </a>
+            
+            <a class="item" onClick="showModalReg()">
+                <b>Inscription</b>
+            </a>
+        </div>
+
+        <div class="item">
+            <a class="item" href="articles.html">
+                <b>Articles</b>
+            </a>
+            
+            <a class="item" href="contact.html">
+                <b>Contact</b>
+            </a>
     
-        <a class="item">
-        <b>Inscription</b>
-        </a>
-
-        <a class="item" href="articles.html">
-            <b>Articles</b>
+            <a class="item">
+                <b>Parametres</b>
             </a>
+        </div>
         
-        <a class="item" href="contact.html">
-            <b>Contact</b>
-        </a>
-
-        <a class="item">
-            <b>Parametres</b>
+        <div class="item">
+            <a class="item">
+                <b>Creer un article</b>
             </a>
-        
-        <a class="item">
-            <b>Creer un article</b>
-        </a>
-        
+        </div>
     </div>
 
 
@@ -67,17 +65,17 @@
         <div class="ui grid">
             <div class="ui inverted fixed menu navbar page grid">
                 <a href="index.php" class="active item">
-                    <img src="https://place-hold.it/50x50" alt="">
+                    <img src="assets/img/logo.png" alt="">
                 </a>
                 <a id="toggle" class="item">
                     Menu
                 </a>
 
                 <div class="right menu">
-                    <a class="item">
+                    <a class="item" onClick="showModalLogin()">
                         connexion
                     </a>
-                    <a class="item"> 
+                    <a class="item" onClick="showModalReg()"> 
                         inscription
                     </a>
                 </div>
@@ -172,32 +170,66 @@
 
 </div>
 
+<!-- MODAL LOG IN START -->
 <div class="ui container">
-    <div id="bug" class="ui basic modal">
+    <div id="login" class="ui tiny modal">
         <i class="close icon"></i>
         <div class="header">
-            Reporter un bug
+            Connectez-vous
         </div>
         <div class="content">
-           <form class="ui form">
+            <form class="ui form">
                 <div class="field">
-                    <div class="ui left icon input">
-                    <i class="user icon"></i>
-                    <input type="text" name="name" placeholder="Nom">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Mail</label>
+                            <input type="text" name="fname" placeholder="Entrez votre e-mail">
+                        </div>
+                        <div class="field">
+                            <label>Pass</label>
+                            <input type="text" name="lname" placeholder="Entrez votre mot de passe">
+                        </div>
                     </div>
+                    <p><a href="">Mot de passe oublié ?</a></p>
                 </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                    <i class="mail icon"></i>
-                    <textarea name="message" placeholder="Quel bug rencontrez-vous?"></textarea>
-                    </div>
-                </div>
-                <div class="ui fluid large green submit button">Envoyer</div>  
-                <div class="ui error message"></div>
             </form>
+        </div>    
+
+        <div class="actions">
+            <div class="ui positive button">Valider</div>
         </div>
     </div>
 </div>
+<!-- MODAL LOG IN END -->
+
+<!-- MODAL LOG IN START -->
+<div class="ui container">
+    <div id="register" class="ui tiny modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Inscrivez-vous
+        </div>
+        <div class="content">
+            <form class="ui form">
+                <div class="field">
+                    <label>Pseudo</label>
+                    <input type="text" name="pseudo" placeholder="Entrez votre pseudo">
+                    <label>Mail</label>
+                    <input type="text" name="lname" placeholder="Entrez votre e-mail">
+                    <label>Mot de passe</label>
+                    <input type="text" name="pass" placeholder="Entrez votre Mot de passe">
+                    <label>Confirmation du mot de passe</label>
+                    <input type="text" name="confpass" placeholder="Confirmez votre mot de passe">
+                </div>
+            </form>
+        </div>    
+
+        <div class="actions">
+            <div class="ui positive button">Valider</div>
+        </div>
+    </div>
+</div>
+<!-- MODAL LOG IN END -->
 
 
 <!-- SCRIPTS -->
@@ -206,9 +238,13 @@
         $('.ui.sidebar').sidebar('toggle');
     });
 
-    function showModal1() {
-        $('#bug').modal('show');
-    };
+    function showModalLogin() {
+        $('#login').modal('show');
+    }
+
+    function showModalReg() {
+        $('#register').modal('show');
+    }
 </script>
 
 </body>
